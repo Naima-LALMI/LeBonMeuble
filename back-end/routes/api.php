@@ -18,7 +18,7 @@ use App\Http\Controllers\API\CartController;
 | is assigned the "api" middleware group. Enjoy building your API!
 |
 */
-
+//recupere la donnée grave au chemin (GET/POST) et qui m'envoi vers un point d'entrée (User) et qui appel un controlleur et dans ce controlleur une METHODE (index/show...)
 Route::get('/users', [UserController::class, 'index']);
 Route::post('/users', [UserController::class, 'store']);
 Route::get('/users/{id}', [UserController::class, 'show']);

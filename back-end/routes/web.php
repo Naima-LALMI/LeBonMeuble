@@ -3,7 +3,7 @@
 use Illuminate\Support\Facades\Route;
 
 
-
+//va chercher le chemin grave au verbe GET à la racine '/'  =, localhost8000
 Route::get('/', function () {
     return view('welcome');
 });
@@ -16,6 +16,15 @@ Route::get('/', function () {
 //         return view('dashboard');
 //     })->name('dashboard');
 // });
+
+//chemin pour editer tout les utilisateurs
+Route::get('/users', function() {
+    $persons = App\Models\User::all();
+    if (!$persons){
+        return 'Pas de client dans notre base de donée';
+    }
+    return $persons;
+});
 
 
 //Chemin pour trouver un utilisateur par ID 
@@ -56,10 +65,10 @@ Route::get('/products/{id}', function ($id) {
     $furniture = App\Models\Product::find($id);
 
     if (!$furniture) {
-        return 'Utilisateur non trouvé';
+        return 'Dommage!';
     }
 
-    return $furniture->id;
+    return $furniture;
 });
 
 
@@ -86,5 +95,3 @@ Route::get('/categories', function () {
 
 //     return $toto;
 // });
-//git est chiant
-// Anaël est chiant 

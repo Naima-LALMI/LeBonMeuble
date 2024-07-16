@@ -12,8 +12,11 @@ class UserController extends Controller
      * Display a listing of the resource.
      */
     public function index()
-    {        return User::all();
-
+    
+    {     // creation d'une nvl variable = modele User + requete SQL grace à l'ORM Eloquent   
+        $users = User::all();
+        //permet de renvoyer la reponse en format JSON tt les USERS
+        return response()->json($users);
     }
 
     /**
