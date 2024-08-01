@@ -24,6 +24,8 @@ class UserFactory extends Factory
      *
      * @return array<string, mixed>
      */
+
+     //definition() : Méthode qui retourne un tableau des attributs avec des valeurs factices.
     public function definition(): array
     {
         return [

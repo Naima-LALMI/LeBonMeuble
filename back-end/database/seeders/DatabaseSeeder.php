@@ -16,9 +16,9 @@ class DatabaseSeeder extends Seeder
      */
     public function run(): void
     {
-      
+        // Crée 5 utilisateurs en utilisant les factories.
         User::factory(5)->create();
-
+        // Déclaration un tableau de catégories.
         $categories = [
             ['type'=> 'tables'],
             ['type'=> 'chaises'],
@@ -31,7 +31,7 @@ class DatabaseSeeder extends Seeder
             ['type'=> 'armoires'],
             ['type'=> 'bibliothèques'],
         ];
-        
+        //  Boucle qui permets d'insérer chaque catégorie dans la table categories.
         foreach($categories as $categoriesData){
             Category::create($categoriesData);
         }
